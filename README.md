@@ -27,7 +27,7 @@ to represent different properties for the jobs in them, for example `FixedLength
 jobs. The following example demonstrates the process of creating a job pool and adding a job to it:
 
 ```python
-from models import JobPool
+from active_time_scheduling.models import JobPool
 
 job_pool = JobPool()
 job_pool.add_job(release_time=5, deadline=8, duration=2)
@@ -39,7 +39,7 @@ schedule, which, if the problem instance is feasible, contains the information r
 individual schedules:
 
 ```python
-from schedulers import FlowMethod, GreedyScheduler
+from active_time_scheduling.schedulers import FlowMethod, GreedyScheduler
 
 scheduler = GreedyScheduler(FlowMethod.PREFLOW_PUSH)
 schedule = scheduler.process(job_pool, max_concurrency=2)
